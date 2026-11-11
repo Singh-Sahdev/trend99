@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+env/
+venv/
+.venv/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+*.env
+backend/.env
+client/.env
+
+# Google Cloud & Firebase Credentials
+*firebase*.json
+*account*.json
+*serviceAccount*.json
+*credentials*.json
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Frontend Build & Cache
+dist/
+dist-ssr/
+.vite/
+*.tsbuildinfo
+
+# IDE & OS Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archives & Temporary Artifacts
+*.zip
+*.tar.gz
+results/
+result1/
+results2/
+backend.zip

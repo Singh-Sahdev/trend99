@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+/* Root Theme Variables */
+:root {
+  --background: hsl(216, 45%, 98%);
+  --foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222.2, 84%, 4.9%);
+  --primary: hsl(258, 90%, 66%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(212, 30%, 96.1%);
+  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+  --muted: hsl(210, 40%, 96.1%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --accent: hsl(258, 90%, 95%);
+  --accent-foreground: hsl(258, 90%, 60%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --ring: hsl(258, 90%, 66%);
+  --radius: 1rem;
+
+  --sidebar-background: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(222.2, 84%, 4.9%);
+  --sidebar-primary: hsl(258, 90%, 66%);
+  --sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --sidebar-accent: hsl(258, 90%, 95%);
+  --sidebar-accent-foreground: hsl(258, 90%, 66%);
+  --sidebar-border: hsl(214.3, 31.8%, 91.4%);
+  --sidebar-ring: hsl(258, 90%, 66%);
+}
+
+.dark {
+  --background: hsl(222, 47%, 11%);
+  --foreground: hsl(213, 31%, 91%);
+  --card: hsl(222, 47%, 11%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --popover: hsl(222, 47%, 11%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --primary: hsl(258, 90%, 66%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(217.2, 32.6%, 17.5%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217.2, 32.6%, 17.5%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --accent: hsl(258, 60%, 20%);
+  --accent-foreground: hsl(258, 90%, 70%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217.2, 32.6%, 17.5%);
+  --input: hsl(217.2, 32.6%, 17.5%);
+  --ring: hsl(258, 90%, 66%);
+
+  --sidebar-background: hsl(222, 47%, 11%);
+  --sidebar-foreground: hsl(213, 31%, 91%);
+  --sidebar-primary: hsl(258, 90%, 66%);
+  --sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --sidebar-accent: hsl(258, 60%, 20%);
+  --sidebar-accent-foreground: hsl(258, 90%, 70%);
+  --sidebar-border: hsl(217.2, 32.6%, 17.5%);
+  --sidebar-ring: hsl(258, 90%, 66%);
+}
+
+/* Global Styles */
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Utility Styles */
+.trend-card {
+  background-color: var(--card);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.trend-input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--background);
+  border: 1px solid var(--input);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.trend-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.trend-button-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.trend-button-primary:hover {
+  background-color: hsla(258, 90%, 66%, 0.9);
+}
+
+.trend-button-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.trend-button-secondary:hover {
+  background-color: hsla(212, 30%, 96.1%, 0.8);
+}
+
+.trend-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.card-gradient {
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.5));
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.purple-gradient {
+  background: linear-gradient(to bottom right, rgba(128,0,128,0.9), rgba(75,0,130,0.8));
+  color: white;
+}
+
+.frost-effect {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .frost-effect {
+  background-color: rgba(30, 30, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(30, 30, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradients */
+.bg-gradient-purple {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
+}
+
+.bg-gradient-peach {
+  background: linear-gradient(135deg, #fed7aa 0%, #fb923c 100%);
+}
+
+.mesh-gradient {
+  background-color: hsla(258, 90%, 66%, 0.08);
+  background-image:
+    radial-gradient(at 35% 18%, hsla(258, 95%, 78%, 0.25) 0px, transparent 50%),
+    radial-gradient(at 86% 42%, hsla(227, 100%, 70%, 0.25) 0px, transparent 50%),
+    radial-gradient(at 16% 78%, hsla(274, 100%, 79%, 0.18) 0px, transparent 50%);
+}
+
+
